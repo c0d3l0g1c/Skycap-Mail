@@ -1,0 +1,16 @@
+﻿<UserControl
+    x:Class="Skycap.Controls.EmailAddressItem"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Skycap.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Margin="0" Padding="0">
+    <HyperlinkButton x:Name="hbEmailAddress" FontWeight="Normal" VerticalAlignment="Center" Margin="0" Padding="0" ToolTipService.Placement="Top" ToolTipService.ToolTip="{Binding ToolTip}" RightTapped="hbEmailAddress_RightTapped">
+        <TextBlock Margin="0" Padding="0" VerticalAlignment="Center">
+            <Underline>
+                <Run Text="{Binding DisplayNameAlternate}"/>
+            </Underline>
+        </TextBlock>
+    </HyperlinkButton>
+</UserControl>

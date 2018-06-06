@@ -1,0 +1,135 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Skycap.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:callisto="using:Callisto.Controls"
+    x:Class="Skycap.Controls.MailAccountDialog"
+    mc:Ignorable="d">
+
+    <callisto:CustomDialog x:Name="cdMailAccountDialog" TitleForeground="White">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="36"/>
+                <ColumnDefinition Width="75"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <!-- Progress Layout -->
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <!-- Progress Ring -->
+                <ProgressRing Grid.Column="0" x:Name="prProgress" Visibility="Collapsed"/>
+                
+                <!-- Status -->
+                <TextBlock Grid.Column="1" x:Name="txtSubTitle" Foreground="{StaticResource QuadColourBrush}" TextWrapping="Wrap"/>
+            </Grid>
+
+            <!-- Email Address -->
+            <TextBlock Grid.Row="1" Text="Email address"/>
+            <TextBox Grid.Row="2" x:Name="txtEmailAddress" InputScope="EmailSmtpAddress"/>
+
+            <!-- Username Layout -->
+            <Grid Grid.Row="3" x:Name="gUsername" Visibility="Collapsed">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                
+                <!-- Username -->
+                <TextBlock Grid.Row="0" Text="Username"/>
+                <TextBox Grid.Row="1" x:Name="txtUsername"/>
+            </Grid>
+
+            <!-- Password -->
+            <TextBlock Grid.Row="4" Text="Password"/>
+            <PasswordBox Grid.Row="5" x:Name="pbPassword"/>
+
+            <!-- Email Server Configuration Layout -->
+            <Grid Grid.ColumnSpan="3" Grid.Row="6" x:Name="gEmailServerConfiguration" Margin="0" Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="36"/>
+                    <ColumnDefinition Width="75"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                
+                <!-- Incoming Email Server -->
+                <TextBlock Grid.Row="0" x:Name="tbIncomingEmailServer"/>
+                <TextBox Grid.Row="1" x:Name="txtIncomingEmailServer" InputScope="EmailSmtpAddress"/>
+                <TextBlock Grid.Column="1" Grid.Row="1" Text="Port" VerticalAlignment="Center"/>
+                <TextBox Grid.Column="2" Grid.Row="1" x:Name="txtIncomingEmailServerPort" InputScope="NumberFullWidth" TextAlignment="Right" MaxLength="5" KeyDown="txtEmailServerPort_KeyDown"/>
+                <CheckBox Grid.Row="2" x:Name="cbIncomingEmailServerRequiresSsl" Content="Incoming server requires ssl" IsChecked="True" Click="cbIncomingEmailServerRequiresSsl_Click"/>
+
+                <!-- Outgoing Email Server -->
+                <TextBlock Grid.Row="3" Text="Outgoing (SMTP) email server"/>
+                <TextBox Grid.Row="4" x:Name="txtOutgoingEmailServer" InputScope="EmailSmtpAddress"/>
+                <TextBlock Grid.Column="1" Grid.Row="4" Text="Port" VerticalAlignment="Center"/>
+                <TextBox Grid.Column="2" Grid.Row="4" x:Name="txtOutgoingEmailServerPort" InputScope="NumberFullWidth" TextAlignment="Right" MaxLength="5"  KeyDown="txtEmailServerPort_KeyDown"/>
+                <CheckBox Grid.Row="5" x:Name="cbOutgoingEmailServerRequiresSsl" Content="Outgoing server requires ssl" IsChecked="True" Click="cbOutgoingEmailServerRequiresSsl_Click"/>
+                <CheckBox Grid.Row="6" x:Name="cbOutgoingMailServerRequiresAuthentication" Content="Outgoing server requires authentication" IsChecked="True" Click="cbOutgoingServerRequiresAuthentication_Click" />
+                <CheckBox Grid.Row="7" x:Name="cbUseTheSameUsernameAndPasswordToSendAndReceiveEmail" Content="Use the same username and password to send and receive email" IsChecked="True" Click="cbUseTheSameUsernameAndPasswordToSendAndReceiveEmail_Checked" />
+            </Grid>
+
+            <!-- Outgoing Email Server Credentials Layout -->
+            <Grid Grid.Row="7" x:Name="gOutgoingEmailServerCredentials" Visibility="Collapsed">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Foreground="{StaticResource QuadColourBrush}" Text="Outgoing email server login information"/>
+
+                <!-- Username -->
+                <TextBlock Grid.Row="1" Text="Username (often your email address)"/>
+                <TextBox Grid.Row="2" x:Name="txtSendUsername"/>
+
+                <!-- Password -->
+                <TextBlock Grid.Row="3" Text="Password"/>
+                <PasswordBox Grid.Row="4" x:Name="pbSendPassword"/>
+
+            </Grid>
+
+            <!-- Show More/Less Details-->
+            <HyperlinkButton Grid.Row="8" x:Name="hbShowMoreDetails" Content="Show more details" Click="hbShowMoreDetails_Click" Visibility="Collapsed"/>
+            <HyperlinkButton Grid.Row="8" x:Name="hbShowLessDetails" Content="Show less details" Click="hbShowLessDetails_Click" Visibility="Collapsed"/>
+
+            <!-- Commands -->
+            <StackPanel Grid.ColumnSpan="3" Grid.Row="9" FlowDirection="RightToLeft" Orientation="Horizontal">
+                <Button x:Name="bCancel" Content="Cancel" Click="bCancel_Click"/>
+                <Button x:Name="bConnect" Content="Connect" Click="bConnect_Click"/>
+            </StackPanel>
+            
+        </Grid>
+    </callisto:CustomDialog>
+
+</UserControl>

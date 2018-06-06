@@ -1,0 +1,80 @@
+﻿<UserControl
+    x:Class="Skycap.Controls.EmailAddressInput"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Skycap.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:callisto="using:Callisto.Controls"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400"
+    GotFocus="UserControl_GotFocus">
+
+    <Grid>
+        <Border Background="{StaticResource TertiaryColourBrush}" BorderBrush="Black" BorderThickness="1">
+            <ItemsControl x:Name="icEmailAddress" ItemsSource="{Binding}" MaxHeight="300" VerticalAlignment="Stretch" VerticalContentAlignment="Center">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <local:WrapPanel>
+                            <local:WrapPanel.ChildrenTransitions>
+                                <TransitionCollection>
+                                    <RepositionThemeTransition/>
+                                </TransitionCollection>
+                            </local:WrapPanel.ChildrenTransitions>
+                        </local:WrapPanel>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="{StaticResource OctColourBrush}" BorderThickness="1" Margin="0" Padding="0" VerticalAlignment="Center">
+                            <StackPanel VerticalAlignment="Center">
+                                <Grid Visibility="{Binding ReadOnlyMode}" Margin="0" ToolTipService.Placement="Top" ToolTipService.ToolTip="{Binding ToolTip}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <local:EmailAddressItem/>
+                                    <Button Grid.Column="1" Content="&#xE10A;" Background="{StaticResource OctColourBrush}" FontFamily="Segoe UI Symbol" Foreground="{StaticResource QuadColourBrush}" HorizontalAlignment="Center" Padding="2" Margin="2" Tag="{Binding}" VerticalAlignment="Center" VerticalContentAlignment="Center" Click="Button_Click"/>
+                                </Grid>
+                                <callisto:WatermarkTextBox BorderBrush="{x:Null}" BorderThickness="0" HorizontalContentAlignment="Center" InputScope="EmailSmtpAddress" Margin="0" Padding="0" TextAlignment="Left" Visibility="{Binding EditMode}" VerticalAlignment="Center" VerticalContentAlignment="Center" Watermark="Enter address here..." KeyDown="tbEmailAddress_KeyDown" LostFocus="WatermarkTextBox_LostFocus" TextChanged="WatermarkTextBox_TextChanged" />
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.Template>
+                    <ControlTemplate>
+                        <ScrollViewer Background="Transparent" HorizontalScrollMode="Disabled" VerticalScrollBarVisibility="Auto" VerticalScrollMode="Enabled" ZoomMode="Disabled" Padding="0,0,16,0" Loaded="ScrollViewer_Loaded">
+                            <ItemsPresenter/>
+                        </ScrollViewer>
+                    </ControlTemplate>
+                </ItemsControl.Template>
+            </ItemsControl>
+        </Border>
+
+        <Popup x:Name="pSuggestions" IsOpen="False">
+            <ListView Grid.Row="1" x:Name="lvEmailAddress" Background="{StaticResource TertiaryColourBrush}" BorderBrush="Black" BorderThickness="1,0,1,1" MaxHeight="300" Padding="0" Margin="0" Visibility="Collapsed" Width="406" SelectionChanged="lvEmailAddress_SelectionChanged">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="20"/>
+                                <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+
+                            <!-- Account name -->
+                            <TextBlock Grid.Column="1" Grid.Row="0" FontSize="20" FontWeight="Bold" Foreground="{StaticResource SecondaryColourBrush}" Text="{Binding DisplayNameAlternate}" VerticalAlignment="Center"/>
+
+                            <!-- Email address -->
+                            <TextBlock Grid.Column="1" Grid.Row="1" FontStyle="Italic" Foreground="{StaticResource QuadColourBrush}" Text="{Binding Address}" Padding="0" VerticalAlignment="Center"/>
+
+                            <Border Grid.Column="1" Grid.Row="2" BorderBrush="{StaticResource QuadColourBrush}" BorderThickness="1" Padding="20,2,20,2"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Popup>
+    </Grid>
+    
+</UserControl>

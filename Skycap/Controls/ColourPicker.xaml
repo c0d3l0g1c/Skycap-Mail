@@ -1,0 +1,29 @@
+﻿<UserControl
+    x:Class="Skycap.Controls.ColourPicker"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Skycap.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="320"
+    d:DesignWidth="240"
+    Height="320"
+    Width="240">
+
+    <Popup x:Name="pColourPicker" Height="320" Width="240" IsLightDismissEnabled="True">
+        <Border Background="{StaticResource TertiaryColourBrush}" BorderBrush="{StaticResource SecondaryColourBrush}" BorderThickness="2,2,2,2">
+            <!-- Colour Name -->
+            <ListView Grid.Column="0" x:Name="lvColour" ItemsSource="{Binding}" BorderBrush="{StaticResource SecondaryColourBrush}" BorderThickness="2,2,2,2" ItemContainerStyle="{StaticResource ListViewItemNoTickStyle}" MaxHeight="320" Margin="20" Width="240" SelectionChanged="lvColour_SelectionChanged">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Background="{Binding}" Height="40">
+                            <TextBlock Text="{Binding}" VerticalAlignment="Center"/>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Border>
+    </Popup>
+
+</UserControl>

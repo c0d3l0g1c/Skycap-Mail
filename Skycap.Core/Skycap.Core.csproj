@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{27228B9D-3EEE-40EE-9FC3-76ED18AE260B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Skycap</RootNamespace>
+    <AssemblyName>Skycap.Core</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="IO\FolderType.cs" />
+    <Compile Include="IO\IOUtil.cs" />
+    <Compile Include="Net\Common\AccountSettingsData.cs" />
+    <Compile Include="Net\Common\AuthenticationResult.cs" />
+    <Compile Include="Net\Common\BoundaryChecker.cs" />
+    <Compile Include="Net\Common\EmailFlags.cs" />
+    <Compile Include="Net\Common\LayoutAwarePage.cs" />
+    <Compile Include="Net\Common\LogFile.cs" />
+    <Compile Include="Net\Common\MailboxListViewItem.cs" />
+    <Compile Include="Net\Common\MailClientState.cs" />
+    <Compile Include="Net\Common\Collections\AccountSettingsDataList.cs" />
+    <Compile Include="Net\Common\Collections\AttachmentCollection.cs" />
+    <Compile Include="Net\Common\Collections\AttributesDictionary.cs" />
+    <Compile Include="Net\Common\Collections\CollectionComparer.cs" />
+    <Compile Include="Net\Common\Collections\DictionaryExtenders.cs" />
+    <Compile Include="Net\Common\Collections\EmailAddressCollection.cs" />
+    <Compile Include="Net\Common\Collections\ExtraHeadersDictionary.cs" />
+    <Compile Include="Net\Common\Collections\PartCollection.cs" />
+    <Compile Include="Net\Common\Collections\Rfc822MessageCollection.cs" />
+    <Compile Include="Net\Common\CommandResponseType.cs" />
+    <Compile Include="Net\Common\Configurations\CodeConfigurationProvider.cs" />
+    <Compile Include="Net\Common\Configurations\EAuthenticationType.cs" />
+    <Compile Include="Net\Common\Configurations\EInteractionType.cs" />
+    <Compile Include="Net\Common\Configurations\EProxyType.cs" />
+    <Compile Include="Net\Common\Configurations\IConfigurationProvider.cs" />
+    <Compile Include="Net\Common\Connections\BaseConnection.cs" />
+    <Compile Include="Net\Common\Connections\ConnectionFactory.cs" />
+    <Compile Include="Net\Common\Connections\DirectConnection.cs" />
+    <Compile Include="Net\Common\Connections\HttpProxyConnection.cs" />
+    <Compile Include="Net\Common\Connections\IConnection.cs" />
+    <Compile Include="Net\Common\Connections\IConnectionFactory.cs" />
+    <Compile Include="Net\Common\Connections\Socks4ProxyConnection.cs" />
+    <Compile Include="Net\Common\Connections\Socks5ProxyConnection.cs" />
+    <Compile Include="Net\Common\Constants.cs" />
+    <Compile Include="Net\Common\ContentDisposition.cs" />
+    <Compile Include="Net\Common\ContentType.cs" />
+    <Compile Include="Net\Common\ContentWriters\FileContentWriter.cs" />
+    <Compile Include="Net\Common\ContentWriters\IContentWriter.cs" />
+    <Compile Include="Net\Common\ContentWriters\StringContentWriter.cs" />
+    <Compile Include="Net\Common\DateTimeOffset.cs" />
+    <Compile Include="Net\Common\DeleteMessageEventArgs.cs" />
+    <Compile Include="Net\Common\DeleteMessageFailedEventArgs.cs" />
+    <Compile Include="Net\Common\DownloadEmailsFromOptions.cs" />
+    <Compile Include="Net\Common\DownloadNewEmailOptions.cs" />
+    <Compile Include="Net\Common\EBoundaryType.cs" />
+    <Compile Include="Net\Common\EConnectionState.cs" />
+    <Compile Include="Net\Common\EContentTransferEncoding.cs" />
+    <Compile Include="Net\Common\EmailAddress.cs" />
+    <Compile Include="Net\Common\EmailService.cs" />
+    <Compile Include="Net\Common\EmailServiceProvider.cs" />
+    <Compile Include="Net\Common\EMessageCheckResult.cs" />
+    <Compile Include="Net\Common\ETextContentType.cs" />
+    <Compile Include="Net\Common\Exceptions\AuthenticationMethodNotSupportedException.cs" />
+    <Compile Include="Net\Common\Exceptions\BadAttachmentDirectoryException.cs" />
+    <Compile Include="Net\Common\Exceptions\ConnectionException.cs" />
+    <Compile Include="Net\Common\Exceptions\EndOfMessageException.cs" />
+    <Compile Include="Net\Common\Exceptions\ParseException.cs" />
+    <Compile Include="Net\Common\Extensions\StreamExtensions.cs" />
+    <Compile Include="Net\Common\Extensions\StringBuilderExtensions.cs" />
+    <Compile Include="Net\Common\FailedEventArgs.cs" />
+    <Compile Include="Net\Common\MailboxEventArgs.cs" />
+    <Compile Include="Net\Common\MailboxFailedEventArgs.cs" />
+    <Compile Include="Net\Common\MailboxFolder.cs" />
+    <Compile Include="Net\Common\MailboxRestoreState.cs" />
+    <Compile Include="Net\Common\MailboxTreeEventArgs.cs" />
+    <Compile Include="Net\Common\MailboxTreeFailedEventArgs.cs" />
+    <Compile Include="Net\Common\MailClient.cs" />
+    <Compile Include="Net\Common\MailHeader.cs" />
+    <Compile Include="Net\Common\MailHeaderComparer.cs" />
+    <Compile Include="Net\Common\MailHeaderDictionary.cs" />
+    <Compile Include="Net\Common\MailHeaderObservableCollectionView.cs" />
+    <Compile Include="Net\Common\MailImportance.cs" />
+    <Compile Include="Net\Common\MailMessage.cs" />
+    <Compile Include="Net\Common\MailMessageRFCDecoder.cs" />
+    <Compile Include="Net\Common\MessageNavigationContext.cs" />
+    <Compile Include="Net\Common\MessageProgressEventArgs.cs" />
+    <Compile Include="Net\Common\MessageEventArgs.cs" />
+    <Compile Include="Net\Common\MessageFailedEventArgs.cs" />
+    <Compile Include="Net\Common\MessageParts\Attachment.cs" />
+    <Compile Include="Net\Common\MessageParts\BaseContentPart.cs" />
+    <Compile Include="Net\Common\MessageParts\ContentPart.cs" />
+    <Compile Include="Net\Common\MessageParts\EPartType.cs" />
+    <Compile Include="Net\Common\MessageParts\IPart.cs" />
+    <Compile Include="Net\Common\MessageParts\MessageDeliveryStatusPart.cs" />
+    <Compile Include="Net\Common\MessageParts\MessageDispositionNotificationPart.cs" />
+    <Compile Include="Net\Common\MessageParts\MessagePart.cs" />
+    <Compile Include="Net\Common\MessageParts\MultiPart.cs" />
+    <Compile Include="Net\Common\MessageParts\PartUtils.cs" />
+    <Compile Include="Net\Common\MessageParts\TextPart.cs" />
+    <Compile Include="Net\Common\MessageReaders\Base64MessageReader.cs" />
+    <Compile Include="Net\Common\MessageReaders\BoundedMessageReader.cs" />
+    <Compile Include="Net\Common\MessageReaders\IMessageReader.cs" />
+    <Compile Include="Net\Common\MessageReaders\QuotedPrintableMessageReader.cs" />
+    <Compile Include="Net\Common\MessageReaders\SizedMessageStreamReader.cs" />
+    <Compile Include="Net\Common\MessageReaders\UnencodedMessageReader.cs" />
+    <Compile Include="Net\Common\MIMEHeader.cs" />
+    <Compile Include="Net\Common\MoveMessageEventArgs.cs" />
+    <Compile Include="Net\Common\NavigationContext.cs" />
+    <Compile Include="Net\Common\ObservableCollectionView.cs" />
+    <Compile Include="Net\Common\Parsers\BaseComplexPartParser.cs" />
+    <Compile Include="Net\Common\Parsers\BaseContentParser.cs" />
+    <Compile Include="Net\Common\Parsers\BaseParser.cs" />
+    <Compile Include="Net\Common\Parsers\ContentPartParser.cs" />
+    <Compile Include="Net\Common\Parsers\MailMessageParser.cs" />
+    <Compile Include="Net\Common\Parsers\MessageDeliveryStatusPartParser.cs" />
+    <Compile Include="Net\Common\Parsers\MessageDispositionNotificationPartParser.cs" />
+    <Compile Include="Net\Common\Parsers\MessagePartParser.cs" />
+    <Compile Include="Net\Common\Parsers\MIMEHeaderParser.cs" />
+    <Compile Include="Net\Common\Parsers\MultiPartParser.cs" />
+    <Compile Include="Net\Common\Parsers\TextPartParser.cs" />
+    <Compile Include="Net\Common\Parsers\Utils.cs" />
+    <Compile Include="Net\Common\QueuedTasks\BackgroundTimer.cs" />
+    <Compile Include="Net\Common\QueuedTasks\MarkAsUnflaggedPrioritisedQueuedTask.cs" />
+    <Compile Include="Net\Common\QueuedTasks\IQueue.cs" />
+    <Compile Include="Net\Common\QueuedTasks\MarkAsDeletedPrioritisedQueuedTask.cs" />
+    <Compile Include="Net\Common\QueuedTasks\MarkAsFlaggedPrioritisedQueuedTask.cs" />
+    <Compile Include="Net\Common\QueuedTasks\MarkAsUndeletedPrioritisedQueuedTask.cs" />
+    <Compile Include="Net\Common\QueuedTasks\OutboxQueue.cs" />
+    <Compile Include="Net\Common\QueuedTasks\OutboxQueuedTaskProcessor.cs" />
+    <Compile Include="Net\Common\QueuedTasks\QueuedTaskProcessor.cs" />
+    <Compile Include="Net\Common\QueuedTasks\RemoveMailboxPrioritisedQueuedTask.cs" />
+    <Compile Include="Net\Common\QueuedTasks\DeleteMessagePrioritisedQueuedTask.cs" />
+    <Compile Include="Net\Common\QueuedTasks\DownloadMessagePrioritisedQueuedTask.cs" />
+    <Compile Include="Net\Common\QueuedTasks\RenameMailboxPrioritisedQueuedTask.cs" />
+    <Compile Include="Net\Common\QueuedTasks\MarkAsReadPrioritisedQueuedTask.cs" />
+    <Compile Include="Net\Common\QueuedTasks\MarkAsUnreadPrioritisedQueuedTask.cs" />
+    <Compile Include="Net\Common\QueuedTasks\MessageMailboxPrioritisedQueuedTask.cs" />
+    <Compile Include="Net\Common\QueuedTasks\MoveMessagePrioritisedQueuedTask.cs" />
+    <Compile Include="Net\Common\QueuedTasks\AddMailboxPrioritisedQueuedTask.cs" />
+    <Compile Include="Net\Common\QueuedTasks\PrioritisedQueue.cs" />
+    <Compile Include="Net\Common\QueuedTasks\PrioritisedQueuedTask.cs" />
+    <Compile Include="Net\Common\QueuedTasks\PrioritisedQueuedTaskProcessor.cs" />
+    <Compile Include="Net\Common\QueuedTasks\PrioritisedQueuedTaskType.cs" />
+    <Compile Include="Net\Common\QueuedTasks\SaveToDraftsPrioritisedQueuedTask.cs" />
+    <Compile Include="Net\Common\RenameMailboxEventArgs.cs" />
+    <Compile Include="Net\Common\RenameMailboxFailedEventArgs.cs" />
+    <Compile Include="Net\Common\PopMessage.cs" />
+    <Compile Include="Net\Common\SendMessageEventArgs.cs" />
+    <Compile Include="Net\Common\SendMessageFailedEventArgs.cs" />
+    <Compile Include="Net\Common\SortedObservableCollection.cs" />
+    <Compile Include="Net\Common\StatisticInfo.cs" />
+    <Compile Include="Net\Common\StorageSettings.cs" />
+    <Compile Include="Net\Common\StructuredMessage.cs" />
+    <Compile Include="Net\Common\SuspensionManager.cs" />
+    <Compile Include="Net\Common\WellKnownEmailServer.cs" />
+    <Compile Include="Net\Imap\Collections\MailboxCollection.cs" />
+    <Compile Include="Net\Imap\Collections\MatchedNameCollection.cs" />
+    <Compile Include="Net\Imap\Collections\MessageCollection.cs" />
+    <Compile Include="Net\Imap\Collections\MessageFlagCollection.cs" />
+    <Compile Include="Net\Imap\Collections\NameAttributesCollection.cs" />
+    <Compile Include="Net\Imap\Collections\UIDCollection.cs" />
+    <Compile Include="Net\Imap\Commands\APPENDCommand.cs" />
+    <Compile Include="Net\Imap\Commands\AuthenticationMethodFactory.cs" />
+    <Compile Include="Net\Imap\Commands\BaseAUTHENTICATECommand.cs" />
+    <Compile Include="Net\Imap\Commands\BaseFETCHCommand.cs" />
+    <Compile Include="Net\Imap\Commands\BaseListCommand.cs" />
+    <Compile Include="Net\Imap\Commands\BaseSelectCommand.cs" />
+    <Compile Include="Net\Imap\Commands\CAPABIILITYCommand.cs" />
+    <Compile Include="Net\Imap\Commands\CHECKCommand.cs" />
+    <Compile Include="Net\Imap\Commands\CLOSECommand.cs" />
+    <Compile Include="Net\Imap\Commands\COPYCommand.cs" />
+    <Compile Include="Net\Imap\Commands\CREATECommand.cs" />
+    <Compile Include="Net\Imap\Commands\DELETECommand.cs" />
+    <Compile Include="Net\Imap\Commands\EFetchMode.cs" />
+    <Compile Include="Net\Imap\Commands\EIMAP4MailBoxAccessType.cs" />
+    <Compile Include="Net\Imap\Commands\EIMAP4StatusRequest.cs" />
+    <Compile Include="Net\Imap\Commands\EXAMINECommand.cs" />
+    <Compile Include="Net\Imap\Commands\EXPUNGECommand.cs" />
+    <Compile Include="Net\Imap\Commands\IMAP4BaseCommand.cs" />
+    <Compile Include="Net\Imap\Commands\LISTCommand.cs" />
+    <Compile Include="Net\Imap\Commands\LOGINAUTHENTICATECommand.cs" />
+    <Compile Include="Net\Imap\Commands\LOGINCommand.cs" />
+    <Compile Include="Net\Imap\Commands\LOGOUTCommand.cs" />
+    <Compile Include="Net\Imap\Commands\LSUBCommand.cs" />
+    <Compile Include="Net\Imap\Commands\MessageReceivedEventArgs.cs" />
+    <Compile Include="Net\Imap\Commands\UIDEXPUNGECommand.cs" />
+    <Compile Include="Net\Imap\Commands\UIDMOVECommand.cs" />
+    <Compile Include="Net\Imap\Commands\NOOPCommand.cs" />
+    <Compile Include="Net\Imap\Commands\PLAINAUTHENTICATECommand.cs" />
+    <Compile Include="Net\Imap\Commands\QUOTAROOTCommand.cs" />
+    <Compile Include="Net\Imap\Commands\RENAMECommand.cs" />
+    <Compile Include="Net\Imap\Commands\SEARCHCommand.cs" />
+    <Compile Include="Net\Imap\Commands\SELECTCommand.cs" />
+    <Compile Include="Net\Imap\Commands\STARTTLSCommand.cs" />
+    <Compile Include="Net\Imap\Commands\STATUSCommand.cs" />
+    <Compile Include="Net\Imap\Commands\STORECommand.cs" />
+    <Compile Include="Net\Imap\Commands\SUBSCRIBECommand.cs" />
+    <Compile Include="Net\Imap\Commands\UIDCOPYCommand.cs" />
+    <Compile Include="Net\Imap\Commands\UIDSEARCHCommand.cs" />
+    <Compile Include="Net\Imap\Commands\UIDSTORECommand.cs" />
+    <Compile Include="Net\Imap\Commands\UNSUBSCRIBECommand.cs" />
+    <Compile Include="Net\Imap\EClientState.cs" />
+    <Compile Include="Net\Imap\EFlag.cs" />
+    <Compile Include="Net\Imap\EFlagMode.cs" />
+    <Compile Include="Net\Imap\ENameAttribute.cs" />
+    <Compile Include="Net\Imap\ESuddenResponseType.cs" />
+    <Compile Include="Net\Imap\Events\AttachReceivedArgs.cs" />
+    <Compile Include="Net\Imap\Events\AttachReceivedEventHandler.cs" />
+    <Compile Include="Net\Imap\Events\BrokenMessageEventHandler.cs" />
+    <Compile Include="Net\Imap\Events\BrokenMessageInfoArgs.cs" />
+    <Compile Include="Net\Imap\Events\ClientEventHandler.cs" />
+    <Compile Include="Net\Imap\Events\MessageReceivedEventHandler.cs" />
+    <Compile Include="Net\Imap\Events\ServerResponseReceived.cs" />
+    <Compile Include="Net\Imap\Events\ServerResponseReceivedEventArgs.cs" />
+    <Compile Include="Net\Imap\Events\StateChangedEventHandler.cs" />
+    <Compile Include="Net\Imap\Exceptions\BadMailboxException.cs" />
+    <Compile Include="Net\Imap\Exceptions\ExpectedResponseException.cs" />
+    <Compile Include="Net\Imap\Exceptions\ImapException.cs" />
+    <Compile Include="Net\Imap\Exceptions\IncorrectResponseException.cs" />
+    <Compile Include="Net\Imap\Exceptions\UnexpectedCommandIDException.cs" />
+    <Compile Include="Net\Imap\Exceptions\UnexpectedResponseException.cs" />
+    <Compile Include="Net\Imap\Exceptions\UnknownNameAttributeException.cs" />
+    <Compile Include="Net\Imap\IInteractDispatcher.cs" />
+    <Compile Include="Net\Imap\ImapClient.cs" />
+    <Compile Include="Net\Imap\ImapMailClient.cs" />
+    <Compile Include="Net\Imap\ImapMessage.cs" />
+    <Compile Include="Net\Imap\InteractDispatcher.cs" />
+    <Compile Include="Net\Imap\Keyword.cs" />
+    <Compile Include="Net\Common\Mailbox.cs" />
+    <Compile Include="Net\Imap\MessageFlag.cs" />
+    <Compile Include="Net\Imap\Parsers\BodyPartDescriptionParser.cs" />
+    <Compile Include="Net\Imap\Parsers\EFetchResponseParserState.cs" />
+    <Compile Include="Net\Imap\Parsers\MessageDescriptionParser.cs" />
+    <Compile Include="Net\Imap\Parsers\SimplePartContentParser.cs" />
+    <Compile Include="Net\Imap\Parsers\StringEncoding.cs" />
+    <Compile Include="Net\Imap\Parsers\Utils.cs" />
+    <Compile Include="Net\Imap\Query.cs" />
+    <Compile Include="Net\Imap\Responses\CompletionResponse.cs" />
+    <Compile Include="Net\Imap\Responses\ECompletionResponseType.cs" />
+    <Compile Include="Net\Imap\Responses\EIMAP4ResponseType.cs" />
+    <Compile Include="Net\Imap\Responses\IMAP4Response.cs" />
+    <Compile Include="Net\Imap\Responses\MatchedName.cs" />
+    <Compile Include="Net\Imap\Responses\ResponseFilter.cs" />
+    <Compile Include="Net\Imap\Scripts\ReceiveAttach.cs" />
+    <Compile Include="Net\Imap\Scripts\ReceiveFullMessage.cs" />
+    <Compile Include="Net\Imap\Scripts\ReceiveHeader.cs" />
+    <Compile Include="Net\Imap\Scripts\ReceiveMessageText.cs" />
+    <Compile Include="Net\Imap\Scripts\ReceivePart.cs" />
+    <Compile Include="Net\Imap\Scripts\ReceiveStats.cs" />
+    <Compile Include="Net\Imap\Sequences\ISequence.cs" />
+    <Compile Include="Net\Imap\Sequences\MessageSequenceNumbers.cs" />
+    <Compile Include="Net\Imap\Sequences\SequenceLargeNumber.cs" />
+    <Compile Include="Net\Imap\Sequences\SequenceNumber.cs" />
+    <Compile Include="Net\Imap\Sequences\SequenceRange.cs" />
+    <Compile Include="Net\Imap\Sequences\SequenceSet.cs" />
+    <Compile Include="Net\Pop3\Command\AuthLogin.cs" />
+    <Compile Include="Net\Pop3\Command\AuthPlain.cs" />
+    <Compile Include="Net\Pop3\Command\AuthStandart.cs" />
+    <Compile Include="Net\Pop3\Command\CAPA.cs" />
+    <Compile Include="Net\Pop3\Command\DELE.cs" />
+    <Compile Include="Net\Pop3\Command\IPOP3Command.cs" />
+    <Compile Include="Net\Pop3\Command\LIST.cs" />
+    <Compile Include="Net\Pop3\Command\NOOP.cs" />
+    <Compile Include="Net\Pop3\Command\PASS.cs" />
+    <Compile Include="Net\Pop3\Command\Pop3Command.cs" />
+    <Compile Include="Net\Pop3\Command\QUIT.cs" />
+    <Compile Include="Net\Pop3\Command\RETR.cs" />
+    <Compile Include="Net\Pop3\Command\RSET.cs" />
+    <Compile Include="Net\Pop3\Command\STAT.cs" />
+    <Compile Include="Net\Pop3\Command\STLS.cs" />
+    <Compile Include="Net\Pop3\Command\TOP.cs" />
+    <Compile Include="Net\Pop3\Command\UIDL.cs" />
+    <Compile Include="Net\Pop3\Command\USER.cs" />
+    <Compile Include="Net\Pop3\EPop3ClientState.cs" />
+    <Compile Include="Net\Pop3\EPop3ConnectionState.cs" />
+    <Compile Include="Net\Pop3\EPop3ResponseType.cs" />
+    <Compile Include="Net\Pop3\Exceptions\Pop3ConnectException.cs" />
+    <Compile Include="Net\Pop3\Exceptions\Pop3Exception.cs" />
+    <Compile Include="Net\Pop3\Exceptions\Pop3ReceiveException.cs" />
+    <Compile Include="Net\Pop3\Exceptions\Pop3ReceiveMessageException.cs" />
+    <Compile Include="Net\Pop3\Exceptions\Pop3SendException.cs" />
+    <Compile Include="Net\Pop3\Exceptions\Pop3WrongStateException.cs" />
+    <Compile Include="Net\Pop3\Pop3Client.cs" />
+    <Compile Include="Net\Pop3\Pop3ClientEventHandler.cs" />
+    <Compile Include="Net\Pop3\Pop3MessageEventHandler.cs" />
+    <Compile Include="Net\Pop3\Pop3MessageIDHandler.cs" />
+    <Compile Include="Net\Pop3\Pop3MessageInfo.cs" />
+    <Compile Include="Net\Pop3\Pop3MessageInfoCollection.cs" />
+    <Compile Include="Net\Pop3\Pop3MessageInfoEventHandler.cs" />
+    <Compile Include="Net\Pop3\Pop3MessageStatistics.cs" />
+    <Compile Include="Net\Pop3\Pop3MessageStreamReader.cs" />
+    <Compile Include="Net\Pop3\Pop3MessageUIDInfo.cs" />
+    <Compile Include="Net\Pop3\Pop3MessageUIDInfoCollection.cs" />
+    <Compile Include="Net\Pop3\Pop3Response.cs" />
+    <Compile Include="Net\Pop3\Pop3SaslResponse.cs" />
+    <Compile Include="Net\Pop3\PopMailClient.cs" />
+    <Compile Include="Net\SaveToDraftsEventArgs.cs" />
+    <Compile Include="Net\SaveToDraftsFailedEventArgs.cs" />
+    <Compile Include="Net\Smtp\AuthCommandResponse.cs" />
+    <Compile Include="Net\Smtp\EAuthCommandStage.cs" />
+    <Compile Include="Net\Smtp\ESendResult.cs" />
+    <Compile Include="Net\Smtp\ESmtpClientState.cs" />
+    <Compile Include="Net\Smtp\ESmtpCommandResultCode.cs" />
+    <Compile Include="Net\Smtp\ESmtpResponseType.cs" />
+    <Compile Include="Net\Smtp\Exceptions\UnexpectedSMTPResponseException.cs" />
+    <Compile Include="Net\Smtp\ISmtpAction.cs" />
+    <Compile Include="Net\Smtp\MailMessageRFCEncoder.cs" />
+    <Compile Include="Net\Smtp\SendResult.cs" />
+    <Compile Include="Net\Smtp\ServerActions\AUTHLoginCommand.cs" />
+    <Compile Include="Net\Smtp\ServerActions\AUTHPlainCommand.cs" />
+    <Compile Include="Net\Smtp\ServerActions\DATACommand.cs" />
+    <Compile Include="Net\Smtp\ServerActions\EHLOCommand.cs" />
+    <Compile Include="Net\Smtp\ServerActions\HELOCommand.cs" />
+    <Compile Include="Net\Smtp\ServerActions\MAILCommand.cs" />
+    <Compile Include="Net\Smtp\ServerActions\QUITCommand.cs" />
+    <Compile Include="Net\Smtp\ServerActions\RCPTCommand.cs" />
+    <Compile Include="Net\Smtp\ServerActions\StartTlsCommand.cs" />
+    <Compile Include="Net\Smtp\SmtpClient.cs" />
+    <Compile Include="Net\Smtp\SmtpClientEventHandler.cs" />
+    <Compile Include="Net\Smtp\SmtpMessage.cs" />
+    <Compile Include="Net\Smtp\SmtpResponse.cs" />
+    <Compile Include="Net\Smtp\SmtpResponseLine.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\winrt45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
+    <VisualStudioVersion>11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

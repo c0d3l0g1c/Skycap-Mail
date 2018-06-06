@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="Codelogic.iSkycap1" Publisher="CN=03926E5E-950F-4D95-A66E-8B0C0722250D" Version="1.1.1807.2021" />
+  <Properties>
+    <DisplayName>Skycap Mail</DisplayName>
+    <PublisherDisplayName>Codelogic</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Skycap.App">
+      <VisualElements DisplayName="Skycap Mail" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="Skycap Mail. Pop3 and Imap mail client for x86, x64 and ARM devices." ForegroundText="light" BackgroundColor="#00BFFF" ToastCapable="true">
+        <LockScreen Notification="badgeAndTileText" BadgeLogo="Assets\BadgeLogo.png" />
+        <DefaultTile ShortName="Skycap Mail" ShowName="noLogos" WideLogo="Assets\WideLogo.png" />
+        <SplashScreen Image="Assets\SplashScreen.png" />
+        <InitialRotationPreference>
+          <Rotation Preference="landscape" />
+        </InitialRotationPreference>
+      </VisualElements>
+      <Extensions>
+        <Extension Category="windows.contactPicker" />
+        <Extension Category="windows.fileSavePicker">
+          <FileSavePicker>
+            <SupportedFileTypes>
+              <SupportsAnyFileType />
+            </SupportedFileTypes>
+          </FileSavePicker>
+        </Extension>
+        <Extension Category="windows.search" />
+        <Extension Category="windows.printTaskSettings" />
+        <Extension Category="windows.backgroundTasks" EntryPoint="Skycap.Tasks.SyncMailBackgroundTask">
+          <BackgroundTasks>
+            <Task Type="timer" />
+          </BackgroundTasks>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="privateNetworkClientServer" />
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>

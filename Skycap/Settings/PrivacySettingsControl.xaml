@@ -1,0 +1,18 @@
+﻿<UserControl
+    x:Class="Skycap.Settings.PrivacySettingsControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Skycap.Settings"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:cfo="using:CharmFlyoutLibrary"
+    mc:Ignorable="d">
+
+    <cfo:CharmFlyout x:Name="cfPrivacyPolicy" Heading="Accounts" HeadingBackgroundBrush="{StaticResource SecondaryColourBrush}" IsOpenChanged="flyout_IsOpenChanged" FlyoutWidth="646">
+        <RichEditBox x:Name="rtbPrivacyPolicy" BorderBrush="{x:Null}" BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollMode="Enabled" />
+        <cfo:CharmFlyout.Logo>
+            <Image Source="/Assets/SmallLogo.png" Height="30" Width="30"/>
+        </cfo:CharmFlyout.Logo>
+    </cfo:CharmFlyout>
+    
+</UserControl>

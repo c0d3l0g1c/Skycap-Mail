@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A0D103EE-63B1-4E04-8993-7AC74113B063}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Skycap</RootNamespace>
+    <AssemblyName>Skycap</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>Skycap_StoreKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>61E13BABE3C76FBA7DBFB11C4A13730F478475F2</PackageCertificateThumbprint>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppResources.cs" />
+    <Compile Include="Common\BooleanToColourConverter.cs" />
+    <Compile Include="Controls\AddMailboxDialog.xaml.cs">
+      <DependentUpon>AddMailboxDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AddMailboxOptions.cs" />
+    <Compile Include="Controls\EmailServiceDialog.xaml.cs">
+      <DependentUpon>EmailServiceDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FormattedEmailAddress.cs" />
+    <Compile Include="Controls\MailAccountDialog.xaml.cs">
+      <DependentUpon>MailAccountDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ContinuationPage.xaml.cs">
+      <DependentUpon>ContinuationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\BindableBase.cs" />
+    <Compile Include="Common\BooleanNegationConverter.cs" />
+    <Compile Include="Common\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Pages\ComposeMailPage.xaml.cs">
+      <DependentUpon>ComposeMailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AttachmentListView.xaml.cs">
+      <DependentUpon>AttachmentListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ColourPicker.xaml.cs">
+      <DependentUpon>ColourPicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EmailAddressInput.xaml.cs">
+      <DependentUpon>EmailAddressInput.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FontPicker.xaml.cs">
+      <DependentUpon>FontPicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\InsertLinkDialog.xaml.cs">
+      <DependentUpon>InsertLinkDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\RichTextColumns.cs" />
+    <Compile Include="Controls\EmailAddressItem.xaml.cs">
+      <DependentUpon>EmailAddressItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EmailAddressView.xaml.cs">
+      <DependentUpon>EmailAddressView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EmailServiceRadioButtonList.xaml.cs">
+      <DependentUpon>EmailServiceRadioButtonList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TileCanvas.cs" />
+    <Compile Include="Controls\WrapPanel.cs" />
+    <Compile Include="Data\AccountMailboxListViewItemDictionary.cs" />
+    <Compile Include="Data\EmailHeaderDateConverter.cs" />
+    <Compile Include="Data\EmailHeaderTimeConverter.cs" />
+    <Compile Include="Data\EnumConverter.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ShareTargetPage.xaml.cs">
+      <DependentUpon>ShareTargetPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings\AddAccountsSettingsEmailServiceProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Settings\ListAccountsSettingsControl.xaml.cs">
+      <DependentUpon>ListAccountsSettingsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\IFlyoutSettings.cs" />
+    <Compile Include="Settings\PrivacySettingsControl.xaml.cs">
+      <DependentUpon>PrivacySettingsControl.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <Content Include="Assets\Gmx.png" />
+    <Content Include="Assets\Mail.png" />
+    <Content Include="Assets\Outlook.png" />
+    <Content Include="Assets\TitleLogo.png" />
+    <Content Include="Assets\WideLogo.png" />
+    <Content Include="Assets\Zoho.png" />
+    <Content Include="Data\Privacy Policy.rtf" />
+    <None Include="Package.StoreAssociation.xml" />
+    <None Include="packages.config" />
+    <None Include="Skycap_StoreKey.pfx" />
+    <None Include="Skycap_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Aol.png" />
+    <Content Include="Assets\BadgeLogo.png" />
+    <Content Include="Assets\Selected.png" />
+    <Content Include="Assets\DeletedItems.png" />
+    <Content Include="Assets\Drafts.png" />
+    <Content Include="Assets\Folder.png" />
+    <Content Include="Assets\Gmail.png" />
+    <Content Include="Assets\Hotmail.png" />
+    <Content Include="Assets\Inbox.png" />
+    <Content Include="Assets\JunkMail.png" />
+    <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\Other.png" />
+    <Content Include="Assets\Outbox.png" />
+    <Content Include="Assets\SentItems.png" />
+    <Content Include="Assets\SmallLogo.png" />
+    <Content Include="Assets\SplashScreen.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Yahoo.png" />
+    <Content Include="Common\ReadMe.txt" />
+    <Content Include="Data\WindowsStoreProxy.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Controls\AddMailboxDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\EmailServiceDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MailAccountDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ContinuationPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Common\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Common\StandardStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\ComposeMailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\AttachmentListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\EmailAddressItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\EmailAddressInput.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\EmailAddressView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\EmailServiceRadioButtonList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ColourPicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\FontPicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\InsertLinkDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ShareTargetPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Settings\ListAccountsSettingsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Settings\PrivacySettingsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Callisto\Callisto.csproj">
+      <Project>{42e8be6b-9a3c-4236-a0c7-8a8dbd757021}</Project>
+      <Name>Callisto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Skycap.Core\Skycap.Core.csproj">
+      <Project>{27228b9d-3eee-40ee-9fc3-76ed18ae260b}</Project>
+      <Name>Skycap.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Skycap.FontEnumeration\FontEnumeration.vcxproj">
+      <Project>{37f57f9e-390e-4127-ad5b-cdab45dd3fc1}</Project>
+      <Name>Skycap.FontEnumeration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Skycap.Notifications\Skycap.Notifications.csproj">
+      <Project>{6e87464b-b064-40ca-8161-7c18c337adff}</Project>
+      <Name>Skycap.Notifications</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Skycap.Tasks\Skycap.Tasks.csproj">
+      <Project>{87358bd0-fd4e-42dc-b6b8-2a73c262f72e}</Project>
+      <Name>Skycap.Tasks</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Skycap.Text.Converters\Skycap.Text.Converters.csproj">
+      <Project>{9a942af0-a50a-4e19-ae54-e69e9c0339c2}</Project>
+      <Name>Skycap.Text.Converters</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="CharmFlyoutLibrary">
+      <HintPath>..\packages\CharmFlyout.1.0.12\lib\winrt45\CharmFlyoutLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
+    <VisualStudioVersion>11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

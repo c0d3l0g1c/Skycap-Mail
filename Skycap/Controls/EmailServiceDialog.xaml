@@ -1,0 +1,46 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Skycap.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:callisto="using:Callisto.Controls"
+    x:Class="Skycap.Controls.EmailServiceDialog"
+    mc:Ignorable="d"
+    d:DesignHeight="275"
+    d:DesignWidth="570">
+
+    <callisto:CustomDialog x:Name="cdEmailServiceDialog" TitleBackground="{StaticResource SecondaryColourBrush}" TitleForeground="{StaticResource TertiaryColourBrush}">
+        <Grid Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="70"/>
+            </Grid.RowDefinitions>
+
+            <!-- Content -->
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Foreground="{StaticResource QuadColourBrush}" Text="What kind of account is this?" />
+                <RadioButton Grid.Row="2" x:Name="rbImap" Content="Imap" FontWeight="Bold" GroupName="EmailService" Checked="EmailService_Checked" />
+                <RadioButton Grid.Row="4" x:Name="rbPop" Content="Pop" FontWeight="Bold" GroupName="EmailService" Checked="EmailService_Checked" />
+                <CheckBox Grid.Row="6" x:Name="cbKeepEmailCopiesOnServer" Content="Keep email copies on server" IsChecked="True"/>
+            </Grid>
+
+            <!-- Commands -->
+            <StackPanel Grid.Row="1" FlowDirection="RightToLeft" HorizontalAlignment="Center" Orientation="Horizontal" Width="570">
+                <Button x:Name="bCancel" Content="Cancel" Click="bCancel_Click"/>
+                <Button x:Name="bConnect" Content="Connect" IsEnabled="False" Click="bConnect_Click"/>
+            </StackPanel>
+        </Grid>
+    </callisto:CustomDialog>
+
+</UserControl>
